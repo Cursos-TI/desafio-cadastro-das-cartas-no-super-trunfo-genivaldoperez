@@ -125,7 +125,7 @@ int main() {
     // Cadastrando a Cidade 01 do Estado A:
     printf("\n");
     printf("Digite o nome da cidade 01 do Estado A.\n");
-    fgets(nome_cidade_a01, 50, stdin);
+    scanf("%s", nome_cidade_a01);
     printf("Digite a população da cidade de %s\n", nome_cidade_a01);
     scanf("%d", &populacao_a01);
     printf("Digite a área da cidade de %s\n", nome_cidade_a01);
@@ -137,8 +137,8 @@ int main() {
 
     // Cadastrando a Cidade 02 do Estado A:
     printf("\n");
-    printf("Digite o nome da cidade 02 do Estado A.\n");
-    fgets(nome_cidade_a02, 50, stdin);
+    printf("Digite o nome da cidade 02 do Estado A.");
+    scanf("%s", nome_cidade_a02);
     printf("Digite a população da cidade de %s\n", nome_cidade_a02);
     scanf("%d", &populacao_a02);
     printf("Digite a área da cidade de %s\n", nome_cidade_a02);
@@ -151,7 +151,7 @@ int main() {
     // Cadastrando a Cidade 03 do Estado A:
     printf("\n");
     printf("Digite o nome da cidade 03 do Estado A.\n");
-    fgets(nome_cidade_a03, 50, stdin);
+    scanf("%s", nome_cidade_a03);
     printf("Digite a população da cidade de %s\n", nome_cidade_a03);
     scanf("%d", &populacao_a03);
     printf("Digite a área da cidade de %s\n", nome_cidade_a03);
@@ -164,7 +164,7 @@ int main() {
     // Cadastrando a Cidade 04 do Estado A:
     printf("\n");
     printf("Digite o nome da cidade 04 do Estado A.\n");
-    fgets(nome_cidade_a04, 50, stdin);
+    scanf("%s", nome_cidade_a04);
     printf("Digite a população da cidade de %s\n", nome_cidade_a04);
     scanf("%d", &populacao_a04);
     printf("Digite a área da cidade de %s\n", nome_cidade_a04);
@@ -186,23 +186,45 @@ int main() {
     printf("\n================================================\n");
     printf("Estado: %c\n", estado_a);
     printf("Código da Carta: %s\n", codigo_a01);
-    printf("Nome da Cidade: %s", nome_cidade_a01);
+    printf("Nome da Cidade: %s\n", nome_cidade_a01);
     printf("População: %d\n", populacao_a01);
     printf("Área: %f\n", area_a01);
     printf("PIB: %f\n", pib_a01);
     printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a01);
-     printf("================================================\n");
+    printf("================================================\n");
 
     // Imorimindo a carta A02
-      printf("\n================================================\n");
+    printf("\n================================================\n");
     printf("Estado: %c\n", estado_a);
     printf("Código da Carta: %s\n", codigo_a02);
-    printf("Nome da Cidade: %s", nome_cidade_a02);
+    printf("Nome da Cidade: %s\n", nome_cidade_a02);
     printf("População: %d\n", populacao_a02);
     printf("Área: %f\n", area_a02);
     printf("PIB: %f\n", pib_a02);
     printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a02);
-     printf("================================================\n");
+    printf("================================================\n");
+
+// Imorimindo a carta A03
+    printf("\n================================================\n");
+    printf("Estado: %c\n", estado_a);
+    printf("Código da Carta: %s\n", codigo_a03);
+    printf("Nome da Cidade: %s\n", nome_cidade_a03);
+    printf("População: %d\n", populacao_a03);
+    printf("Área: %f\n", area_a03);
+    printf("PIB: %f\n", pib_a03);
+    printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a03);
+    printf("================================================\n");
+
+     // Imorimindo a carta A04
+    printf("\n================================================\n");
+    printf("Estado: %c\n", estado_a);
+    printf("Código da Carta: %s\n", codigo_a04);
+    printf("Nome da Cidade: %s\n", nome_cidade_a04);
+    printf("População: %d\n", populacao_a04);
+    printf("Área: %f\n", area_a04);
+    printf("PIB: %f\n", pib_a04);
+    printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a04);
+    printf("================================================\n");
 
 
     return 0;
