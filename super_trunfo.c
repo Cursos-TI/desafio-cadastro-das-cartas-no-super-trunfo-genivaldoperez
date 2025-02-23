@@ -5,6 +5,8 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
 
+float divide(float x, float y);
+
 int main() 
 {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
@@ -63,6 +65,7 @@ int main()
     printf("Digite o número de pontos turisticos da cidade de %s\n", nome_cidade_a02);
     scanf("%d", &nPontosTuristicos_a02);
 
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
@@ -77,9 +80,11 @@ int main()
     printf("Código da Carta: %s\n", codigo_a01);
     printf("Nome da Cidade: %s\n", nome_cidade_a01);
     printf("População: %d\n", populacao_a01);
-    printf("Área: %2f Km^2\n", area_a01);
-    printf("PIB: %2f de reais\n", pib_a01);
+    printf("Área: %.2f km²\n", area_a01);
+    printf("PIB: %.2f de reais\n", pib_a01);
     printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a01);
+    printf("Densidade Populacional: %.2f hab/km²\n", divide((float)populacao_a01, area_a01));
+    printf("PIB per Capita: %.2f reais\n", divide(pib_a01, (float)populacao_a01));
     printf("==================================================\n");
 
     // Imorimindo a carta A02
@@ -89,8 +94,16 @@ int main()
     printf("Código da Carta: %s\n", codigo_a02);
     printf("Nome da Cidade: %s\n", nome_cidade_a02);
     printf("População: %d\n", populacao_a02);
-    printf("Área: %2f km^2\n", area_a02);
-    printf("PIB: %2f de reais\n", pib_a02);
+    printf("Área: %.2f km²\n", area_a02);
+    printf("PIB: %.2f de reais\n", pib_a02);
     printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a02);
+    printf("Densidade Populacional: %.2f hab/km²\n", divide((float)populacao_a02, area_a02));
+    printf("PIB per Capita: %.2f reais\n", divide(pib_a02, (float)populacao_a02));
     printf("==================================================\n");
+}
+
+float divide(float x, float y)
+{
+    float divisao = x / y;
+    return divisao;
 }
