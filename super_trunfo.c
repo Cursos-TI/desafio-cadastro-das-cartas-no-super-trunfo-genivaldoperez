@@ -72,25 +72,25 @@ int main()
 
     // Imorimindo a carta A01
     printf("\n================================================\n");
-    printf("Carta 1:");
+    printf("Carta 1:\n");
     printf("Estado: %c\n", estado_a);
     printf("Código da Carta: %s\n", codigo_a01);
     printf("Nome da Cidade: %s\n", nome_cidade_a01);
     printf("População: %d\n", populacao_a01);
     printf("Área: %2f Km^2\n", area_a01);
-    printf("PIB: %2f\n", pib_a01);
+    printf("PIB: %2f de reais\n", pib_a01);
     printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a01);
     printf("==================================================\n");
 
     // Imorimindo a carta A02
     printf("\n================================================\n");
-    printf("Carta 2:");
+    printf("Carta 2:\n");
     printf("Estado: %c\n", estado_a);
     printf("Código da Carta: %s\n", codigo_a02);
     printf("Nome da Cidade: %s\n", nome_cidade_a02);
     printf("População: %d\n", populacao_a02);
-    printf("Área: %2f\n", area_a02);
-    printf("PIB: %2f\n", pib_a02);
+    printf("Área: %2f km^2\n", area_a02);
+    printf("PIB: %2f de reais\n", pib_a02);
     printf("Número de Pontos Turísticos: %d\n", nPontosTuristicos_a02);
     printf("==================================================\n");
 }
