@@ -140,6 +140,7 @@ int main()
     int resultado_percapita = compara(perCapita_1, perCapita_2);
     int resultado_superPoder = compara(super_poder_1, super_poder_2);
 
+    /* usado no tema 1
     // Imprimindo o resultado da comparação das cartas
     printf("\nComparação de Cartas:\n");
     printf("População: ");
@@ -155,7 +156,29 @@ int main()
     printf("PIB per Capita: ");
     imprime_comparacao( resultado_percapita );
     printf("Super Poder: ");
-    imprime_comparacao( resultado_superPoder );
+    imprime_comparacao( resultado_superPoder );*/
+
+    // Início desafio do tema 2
+
+    // Atributo escolhido para comaração População (diretamente no código, não pela entrada do úsuario)
+
+    printf("\nComparação de cartas (Atributo: População):\n");
+    printf("\nCarta 1 - %s: %lu\n", nome_cidade_a01, populacao_a01);
+    printf("Carta 2 - %s: %lu\n", nome_cidade_a02, populacao_a02);
+    printf("Resultado: ");
+    if (populacao_a01 > populacao_a02){
+        printf("Carta 1 (%s) venceu!\n", nome_cidade_a01);
+    }
+    if (populacao_a01 == populacao_a02){
+        printf("Empate!\n");
+    }
+    if (populacao_a01 < populacao_a02){
+        printf("Carta 2 (%s) venceu!\n", nome_cidade_a02);
+    }
+
+
+
+
 
 }
 
@@ -171,18 +194,19 @@ int compara(float x, float y)
     if (x > y)
         retorno = 1;
 
-    if (x < y)
+    if (x < y){
         retorno = 0;
-
+    }else{
+        retorno = 2;
+    }  
     return retorno;
-
 }
 
 void imprime_comparacao(int x)
 {
     if (x == 0)
-        printf("Carta 2 venceu (%i)\n", x);
+        printf("Carta 2 venceu!");
 
     if (x == 1)
-    printf("Carta 1 venceu (%i)\n", x);
+    printf("Carta 1 venceu!");
 }
