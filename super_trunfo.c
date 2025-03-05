@@ -8,6 +8,9 @@ void imprime_comparacao(int x); // Função para imprimir o resultado da compara
 float super_poder_1, super_poder_2;
 char nome_cidade_a01[50];
 char nome_cidade_a02[50];
+int primeiraEscolha, segundaEscolha, resultado;
+float parcela_1a, parcela_1b, parcela_2a, parcela_2b, soma_carta_1, soma_carta_2;
+
 
 int main() 
 {
@@ -114,7 +117,7 @@ int main()
     printf("==================================================\n");
 
 
-    // Váriáveis com os resultados da comparação dos atributos
+    // Váriáveis com os resultados da comparação dos atributos individualmente
     int resultado_populacao = compara((float)populacao_a01, (float)populacao_a02);
     int resultado_area = compara( area_a01, area_a02 );
     int resultado_pib = compara(pib_a01, pib_a02);
@@ -123,20 +126,85 @@ int main()
     int resultado_percapita = compara(perCapita_1, perCapita_2);
     int resultado_superPoder = compara(super_poder_1, super_poder_2);
 
-    // Menu de escolha do atributo para comparação
-    printf("Escolha um atributo:\n");
+    // Menu de escolha dos atributos para comparação
+    printf("Você deve escolher dois atributos para comparação.\n");
+    printf("Escolha o primeiro atributo:\n");
     printf("1. Populacão\n");
     printf("2. Área\n");
     printf("3. PIB\n");
     printf("4. Número de Pontos Turísticos\n");
     printf("5. Densidade demográfica\n");
-    int escolhaJogador;
-    scanf("%d", &escolhaJogador);
+    scanf("%d", &primeiraEscolha);
+
+    printf("Escolha o segundo atributo:\n");
+
+    switch (primeiraEscolha)
+    {
+    case 1:
+        printf("2. Área\n");
+        printf("3. PIB\n");
+        printf("4. Número de Pontos Turísticos\n");
+        printf("5. Densidade demográfica\n");
+        scanf("%d", &segundaEscolha);
+        break;
+    case 2:
+        printf("1. Populacão\n");
+        printf("3. PIB\n");
+        printf("4. Número de Pontos Turísticos\n");
+        printf("5. Densidade demográfica\n");
+        scanf("%d", &segundaEscolha);
+        break;
+    case 3:
+        printf("1. Populacão\n");
+        printf("2. Área\n");
+        printf("4. Número de Pontos Turísticos\n");
+        printf("5. Densidade demográfica\n");
+        scanf("%d", &segundaEscolha);
+        break;
+    case 4:
+        printf("Número de Pontos Turísticos\n");
+        break;
+    case 5:
+        printf("1. Populacão\n");
+        printf("2. Área\n");
+        printf("3. PIB\n");
+        printf("4. Número de Pontos Turísticos\n");
+        scanf("%d", &segundaEscolha);
+        break;
+    default:
+        printf("Opcao invalida.\n");
+        break;
+    }
+
     
     // Imprimindo a saída final de comparação
     printf("\n%s X %s\n", nome_cidade_a01, nome_cidade_a02);
-    printf("Atributo escolhido: ");
-    switch (escolhaJogador)
+    printf("Atributos escolhidos: ");
+    switch (primeiraEscolha)
+    {
+    case 1:
+        printf("População");
+        break;
+    case 2:
+        printf("Área");
+        break;
+    case 3:
+        printf("PIB");
+        break;
+    case 4:
+        printf("Número de Pontos Turísticos");
+        break;
+    case 5:
+        printf("Densidade demográfica");
+        break;
+    default:
+        printf("Opcao invalida.");
+        break;
+    }
+
+    printf(" e ");
+
+    switch (segundaEscolha)
     {
     case 1:
         printf("População\n");
@@ -158,42 +226,66 @@ int main()
         break;
     }
 
-    if (escolhaJogador == 1){
-        printf("População %s: %lu\nPopulação %s: %lu\n", nome_cidade_a01, populacao_a01, nome_cidade_a02, populacao_a02);
-    }else if(escolhaJogador == 2){
-        printf("Área %s: %.2f\nÁrea %s: %.2f\n", nome_cidade_a01, area_a01, nome_cidade_a02, area_a02);
-    }else if(escolhaJogador == 3){
-        printf("PIB %s: %.2f\nPIB %s: %.2f\n", nome_cidade_a01, pib_a01, nome_cidade_a02, pib_a02);
-    }else if(escolhaJogador == 4){
-        printf("Número de pontos turísticos %s: %d\nNúmero de pontos turísticos %s: %d\n", 
+        // Imprimindo os valores dos atributos escolhidos e atribuindo os valores das parcelas para soma
+    if (primeiraEscolha == 1){
+        printf("População:\nCarta 1 (%s)= %lu\nCarta 2 (%s)= %lu\n", nome_cidade_a01, populacao_a01, nome_cidade_a02, populacao_a02);
+        parcela_1a = (float)populacao_a01;
+        parcela_1b = (float)populacao_a02;
+    }else if(primeiraEscolha == 2){
+        printf("Área:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, area_a01, nome_cidade_a02, area_a02);
+        parcela_1a = area_a01;
+        parcela_1b = area_a02;
+    }else if(primeiraEscolha == 3){
+        printf("PIB:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, pib_a01, nome_cidade_a02, pib_a02);
+        parcela_1a = pib_a01;
+        parcela_1b = pib_a02;
+    }else if(primeiraEscolha == 4){
+        printf("Número de pontos turísticos:\nCarta 1 (%s)= %d\nCarta 2 (%s)= %d\n", 
             nome_cidade_a01, nPontosTuristicos_a01, nome_cidade_a02, nPontosTuristicos_a02);
-    }else if(escolhaJogador == 5){
-        printf("Densidade demográfica %s: %.2f\nDensidade demográfica %s: %.2f\n", nome_cidade_a01, densidade_1, nome_cidade_a02, densidade_2);
+        parcela_1a = (float)nPontosTuristicos_a01;
+        parcela_1b = (float)nPontosTuristicos_a02;
+    }else if(primeiraEscolha == 5){
+        printf("Densidade demográfica:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, densidade_1, nome_cidade_a02, densidade_2);
+        parcela_1a = densidade_1;
+        parcela_1b = densidade_2;
     }else{
         printf("Opção inválida");
     }
 
-    switch (escolhaJogador)
-    {
-    case 1:
-        imprime_comparacao(resultado_populacao);
-        break;
-    case 2:
-        imprime_comparacao(resultado_area);
-        break;
-    case 3:
-        imprime_comparacao(resultado_pib);
-        break;
-    case 4:
-        imprime_comparacao(resultado_pontosTuristicos);
-        break;
-    case 5:
-        imprime_comparacao(resultado_densidade);
-        break;
-    default:
-        printf("Opcao invalida.\n");
-        break;
+    if (segundaEscolha == 1){
+        printf("População:\nCarta 1 (%s)= %lu\nCarta 2 (%s)= %lu\n", nome_cidade_a01, populacao_a01, nome_cidade_a02, populacao_a02);
+        parcela_2a = (float)populacao_a01;
+        parcela_2b = (float)populacao_a02;
+    }else if(segundaEscolha == 2){
+        printf("Área:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, area_a01, nome_cidade_a02, area_a02);
+        parcela_2a = area_a01;
+        parcela_2b = area_a02;
+    }else if(segundaEscolha == 3){
+        printf("PIB:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, pib_a01, nome_cidade_a02, pib_a02);
+        parcela_2a = pib_a01;
+        parcela_2b = pib_a02;
+    }else if(segundaEscolha == 4){
+        printf("Número de pontos turísticos:\nCarta 1 (%s)= %d\nCarta 2 (%s)= %d\n", 
+            nome_cidade_a01, nPontosTuristicos_a01, nome_cidade_a02, nPontosTuristicos_a02);
+        parcela_2a = (float)nPontosTuristicos_a01;
+        parcela_2b = (float)nPontosTuristicos_a02;
+    }else if(segundaEscolha == 5){
+        printf("Densidade demográfica:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, densidade_1, nome_cidade_a02, densidade_2);
+        parcela_2a = densidade_1;
+        parcela_2b = densidade_2;
+    }else{
+        printf("Opção inválida");
     }
+
+    // Somando os valores dos atributos escolhidos
+    soma_carta_1 = parcela_1a + parcela_2a;
+    soma_carta_2 = parcela_1b + parcela_2b;
+
+    // Imprimindo o resultado, carta vencedora
+    resultado = compara(soma_carta_1, soma_carta_2);
+    printf("Soma:\nCarta 1 (%s)= %.2f\nCarta 2 (%s)= %.2f\n", nome_cidade_a01, soma_carta_1, nome_cidade_a02, soma_carta_2);
+    printf("Resultado: ");
+    imprime_comparacao(resultado);
 }
 
 // Função retorna o resultado da divisão
@@ -226,6 +318,5 @@ void imprime_comparacao(int x)
         printf("Carta 1 (%s) venceu!\n", nome_cidade_a01);
     }else{
         printf("Empate!\n");
-    }
-        
+    }     
 }
